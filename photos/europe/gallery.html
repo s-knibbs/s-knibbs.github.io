@@ -1,0 +1,35 @@
+---
+layout: post
+nonav: true
+title: Europe Tour Highlights
+images:
+  - image_path: ../prague_night_1.JPG
+    title: Prague at night
+  - image_path: ../prague_castle_at_night.JPG
+    title: Looking across the Vltava towards Prague Castle
+  - image_path: ../fountain_rainbow.jpg
+    title: Fountain in Geneva
+  - image_path: ../park_guell_gallery.jpg
+    title: Park Güell, Barcelona
+  - image_path: ../catacomb_cross.jpg
+    title: Catacombs in Paris
+---
+<ul class="nobullets flex-container">
+  {% for image in page.images %}
+    <li class="gallery-image">
+    	<a href="{{ image.image_path }}" target="_blank">
+    		<img src="{{ image.image_path }}" alt="{{ image.title }}"/>
+    	</a>
+    	<span class="image-caption">{{ image.title }}</span>
+    </li>
+  {% endfor %}
+</ul>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.gallery-image > a').click(function (event) {
+            event.preventDefault();
+            window.open(this.href, this.target, 'width=800,centerscreen=1,location=0');
+        })
+    });
+</script>

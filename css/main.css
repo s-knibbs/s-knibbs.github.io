@@ -58,8 +58,17 @@ strong { font-weight: bold; }
   background: none;
 }
 
+.nobullets {
+  list-style-type: none;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
 }
 
 
@@ -384,6 +393,23 @@ strong { font-weight: bold; }
 }
 
 .post pre.terminal code { background-color: #333; }
+
+/* Gallery Styles */
+/* ----------------------------------------------------------*/
+
+.gallery-image {
+  margin-bottom: 15px; 
+  flex-basis: 50%
+}
+
+.gallery-image > .image-caption {
+    display: block;
+    margin-top: -8px;
+    font-size: 90%;
+    color: grey;
+}
+
+.gallery-image img { max-width: 90%; }
 
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/

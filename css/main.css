@@ -9,14 +9,19 @@
 html, body { height: 100%; }
 
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 120%;
   line-height: 1.5;
   font-weight: 300;
   background-color: #2D3145;
 }
 
-h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 
+{ 
+  font-size: 100%;
+  font-weight: 400;
+  font-family: 'Oxygen', sans-serif;
+}
 
 a         { color: #2a7ae2; text-decoration: none; }
 a:hover   { color: #000; text-decoration: underline; }
@@ -96,6 +101,7 @@ strong { font-weight: bold; }
 .search > input {
   max-width: 90%;
   font-size: 110%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .search-submit {
@@ -164,7 +170,8 @@ strong { font-weight: bold; }
 }
 
 .github-icon-svg,
-.linkedin-icon-svg {
+.linkedin-icon-svg,
+.rss-icon-svg {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -225,6 +232,7 @@ strong { font-weight: bold; }
 .home ul > li:first-child {
   font-size: 200%;
   font-weight: bold;
+  font-family: 'Oxygen', sans-serif;
 }
 
 .home .portrait {

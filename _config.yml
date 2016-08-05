@@ -1,0 +1,15 @@
+# Site settings
+title: Simon Knibbs
+email: simon.knibbs@gmail.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+baseurl: ""
+url: "http://yourdomain.com"
+github_username:  s-knibbs
+linkedin_userid:  simon-knibbs-41a7462b
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+gems:
+  - algoliasearch-jekyll

@@ -1,0 +1,17 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+---
+
+ <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="posts">
+      	<h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-preview">{{ post.excerpt | truncate: 200 }}</span>
+      </li>
+    {% endfor %}
+ </ul>

@@ -1,0 +1,69 @@
+<footer class="site-footer">
+
+  <div class="wrap">
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>{{ site.title }} MEng MIET</li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li>Mobile: +44 (0)7891696685</li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        {% if site.github_username %}<li>
+          <span class="icon github">
+            <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+              <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+              c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+              c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+              c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+              C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+              c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+              c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+              c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+              c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+            </svg>
+          </span>
+          <a href="https://github.com/{{ site.github_username }}">
+            <span class="username">{{ site.github_username }}</span>
+          </a>
+        </li>{% endif %}
+        {% if site.linkedin_userid %}<li>
+          <span class="icon linkedin">
+            <svg
+             class="linkedin-icon-svg"
+             xmlns:dc="http://purl.org/dc/elements/1.1/"
+             xmlns:cc="http://creativecommons.org/ns#"
+             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:svg="http://www.w3.org/2000/svg"
+             xmlns="http://www.w3.org/2000/svg"
+             height="60"
+             id="Layer_1"
+             version="1.1"
+             viewBox="0 0 60 60"
+             width="60"
+             xml:space="preserve"><path
+               d="m 46.837,44.137 0,-11.712 c 0,-6.275 -3.35,-9.195 -7.816,-9.195 -3.604,0 -5.219,1.983 -6.119,3.374 l 0,-2.894 -6.79,0 c 0.09,1.917 0,20.427 0,20.427 l 6.79,0 0,-11.408 c 0,-0.609 0.044,-1.219 0.224,-1.655 0.49,-1.22 1.607,-2.483 3.482,-2.483 2.458,0 3.44,1.873 3.44,4.618 l 0,10.929 6.789,0 z M 18.959,20.922 c 2.367,0 3.842,-1.57 3.842,-3.531 -0.044,-2.003 -1.475,-3.528 -3.797,-3.528 -2.322,0 -3.841,1.524 -3.841,3.528 0,1.961 1.474,3.531 3.753,3.531 l 0.043,0 z M 30,60 C 13.432,60 0,46.568 0,30 0,13.431 13.432,0 30,0 46.568,0 60,13.431 60,30 60,46.568 46.568,60 30,60 Z m -7.646,-15.863 0,-20.427 -6.789,0 0,20.427 6.789,0 z"
+               style="clip-rule:evenodd;fill:#c2c2c2;fill-opacity:1;fill-rule:evenodd"
+               id="path4137" />
+            </svg>
+          </span>
+          <a href="https://uk.linkedin.com/in/{{ site.linkedin_userid }}">
+            <span class="username">LinkedIn</span>
+          </a>
+        </li>{% endif %}
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">{{ site.description }}</p>
+    </div>
+    <div class="copyright">
+      <p class="text">&copy; {{ site.time | date: '%Y' }} Simon J Knibbs. Site powered by <a href="https://jekyllrb.com/">Jekyll</a>, font provided by <a href="https://plus.google.com/+vernonadams" >Vernon Adams</a> &amp; <a href="https://www.google.com/fonts">Google Fonts</a>, search icon by <a href="http://www.flaticon.com/authors/gregor-cresnar">Gregor Cresnar</a> from <a href="www.flaticon.com">www.flaticon.com</a>.</p>
+    </div>
+  </div>
+
+</footer>

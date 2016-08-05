@@ -16,8 +16,8 @@ body {
   background-color: #2D3145;
 }
 
-h1, h2, h3, h4, h5, h6 
-{ 
+h1, h2, h3, h4, h5, h6
+{
   font-size: 100%;
   font-weight: 400;
   font-family: 'Oxygen', sans-serif;
@@ -206,6 +206,7 @@ strong { font-weight: bold; }
 
 .wrap > .post, .wrap > .home {
   padding-right: 20px;
+  padding-left: 20px;
   background-color: rgba(255,255,255,0.55);
   border-radius: 5px;
 }
@@ -224,33 +225,49 @@ strong { font-weight: bold; }
   padding-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
-  padding-left: 60px;
 }
 
 .home h1 { margin-bottom: 25px; }
 
-.home ul { 
+.home ul {
   list-style: none;
   color: rgb(28, 34, 65);
   font-size: 150%;
   flex-grow: 5;
-  padding-top: 25px;
+  padding-top: 20px;
   padding-bottom:15px;
+  text-align: center;
 }
 
 .home ul > li:first-child {
   font-size: 200%;
   font-weight: bold;
-  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 3px;
 }
 
 .home .portrait {
   flex-grow: 2;
+  display: flex;
 }
 
 .home .portrait > img {
-  max-width: 170px;
+  width: 170px;
   border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.call-to-action { margin-top: 20px; margin-bottom: 15px; }
+
+.call-to-action > a {
+  background-color: #2b44ce;
+  padding: 5px 10px;
+  color: #ffcfb1;
+  border-radius: 2px;
+}
+
+.call-to-action > a:hover {
+  text-decoration: none;
 }
 
 .banner-image {
@@ -398,7 +415,7 @@ strong { font-weight: bold; }
 /* ----------------------------------------------------------*/
 
 .gallery-image {
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
   flex-basis: 50%
 }
 

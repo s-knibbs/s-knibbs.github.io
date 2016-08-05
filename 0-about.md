@@ -6,7 +6,7 @@ permalink: /about_me/
 
 Hi everyone, I am a software development engineer working primarily as a backend web developer. I deal with various technologies however, in particular I am interested in working more with embedded Linux systems (e.g. IoT devices).
 
-I am currently based in Kent, England but I am only a 1 hour train ride away from London.
+I am currently based in Kent, England but I am just 1 hour away from London on the train.
 
 Some of the technologies I have experience with:
 

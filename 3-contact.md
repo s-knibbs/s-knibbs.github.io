@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Contact Me
+title: Contact
+long_title: Contact Me
 permalink: /contact/
 ---
 

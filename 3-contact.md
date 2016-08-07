@@ -3,6 +3,7 @@ layout: page
 title: Contact
 long_title: Contact Me
 permalink: /contact/
+mainnav: true
 ---
 
 Feel free to contact me regarding work opportunities, website issues / corrections or technical advice. However, please don't call me outside of normal business hours (8am - 6pm).

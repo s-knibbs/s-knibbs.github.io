@@ -2,6 +2,7 @@
 layout: page
 title: Blog
 permalink: /blog/
+mainnav: true
 ---
 
  <ul class="post-list">
@@ -11,7 +12,7 @@ permalink: /blog/
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
         </h2>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <span class="post-preview">{{ post.excerpt | truncate: 200 }}</span>
+        <span class="post-preview">{{ post.excerpt | truncatewords: 40 }} <a href="{{ post.url | prepend: site.baseurl }}">read more</a></span>
       </li>
     {% endfor %}
  </ul>

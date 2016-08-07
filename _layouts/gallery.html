@@ -1,0 +1,23 @@
+---
+layout: page
+---
+
+<ul class="nobullets flex-container">
+  {% for image in page.images %}
+    <li class="gallery-image">
+      <a href="{{ image.image_path | prepend: site.cdn }}" target="_blank">
+            <img src="{{ image.image_path | prepend: site.cdn }}" alt="{{ image.title }}"/>
+        </a>
+        <span class="image-caption">{{ image.title }}</span>
+    </li>
+  {% endfor %}
+</ul>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.gallery-image > a').click(function (event) {
+            event.preventDefault();
+            window.open(this.href, this.target, 'width=800,centerscreen=1,location=0');
+        })
+    });
+</script>

@@ -16,12 +16,13 @@ body {
   background-color: #2D3145;
 }
 
-h1, h2, h3, h4, h5, h6
-{
+h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: 400;
   font-family: 'Oxygen', sans-serif;
 }
+
+h3 { color: #616161; }
 
 a         { color: #2a7ae2; text-decoration: none; }
 a:hover   { color: #000; text-decoration: underline; }
@@ -45,7 +46,7 @@ input[type="text"] {
   padding: 3px;
 }
 
-dt { font-weight: bold; }
+dt { font-weight: bold; font-family: 'Oxygen', sans-serif; }
 dd { margin-left: 15px; }
 
 strong { font-weight: bold; }
@@ -109,14 +110,18 @@ strong { font-weight: bold; }
 
 .search > input {
   max-width: 90%;
-  font-size: 110%;
+  font-size: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
 .search-submit {
   position: absolute;
-  top: 30px;
-  margin: -23px;
+  top: 6px;
+  margin-left: 5px;
+}
+
+.search-submit > svg {
+  width: 20px;
 }
 
 .site-nav .menu-icon { display: none; }
@@ -201,7 +206,7 @@ strong { font-weight: bold; }
 
 .page-content {
   padding: 30px 0;
-  background-color: #e6e6e6;
+  background-color: #f3f3f3;
 }
 
 .wrap > .post, .wrap > .home {
@@ -251,7 +256,7 @@ strong { font-weight: bold; }
 }
 
 .home .portrait > img {
-  width: 170px;
+  width: 200px;
   border-radius: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -260,9 +265,9 @@ strong { font-weight: bold; }
 .call-to-action { margin-top: 20px; margin-bottom: 15px; }
 
 .call-to-action > a {
-  background-color: #2b44ce;
+  background-color: #009e53;
   padding: 5px 10px;
-  color: #ffcfb1;
+  color: #d4d4d4;
   border-radius: 2px;
 }
 
@@ -270,8 +275,8 @@ strong { font-weight: bold; }
   text-decoration: none;
 }
 
-.banner-image {
-  background-image: url(/image/park_guell_1920.JPG);
+.page-content.banner-image {
+  background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 50%;
@@ -385,7 +390,7 @@ strong { font-weight: bold; }
   -moz-border-radius: 3px;
   border-radius: 3px;
   font-size: 15px;
-  overflow:scroll;
+  overflow-x: auto;
 }
 
 .post code { padding: 1px 5px; }

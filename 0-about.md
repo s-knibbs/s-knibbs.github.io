@@ -1,10 +1,11 @@
 ---
 layout: page
 title: About Me
-permalink: /about_me/
+permalink: /about-me/
+mainnav: true
 ---
 
-Hi everyone, I am a software development engineer working primarily as a backend web developer. I deal with various technologies however, in particular I am interested in working more with embedded Linux systems (e.g. IoT devices).
+Hi everyone, I am a software design engineer working primarily as a backend web developer. I deal with various technologies however, in particular I am interested in working more with embedded Linux systems (e.g. IoT devices).
 
 I am currently based in Kent, England but I am just 1 hour away from London on the train.
 
@@ -20,4 +21,4 @@ Outside of work I have a number of interests. I studied electronic engineering a
 
 I try to stay active in my free time. In particular, I enjoy cycling, both for work and leisure with a mixture of on and off-road cycling. In 2015 I circumnavigated the Isle of Wight for the [Isle of Wight randonnee](http://www.cycleisland.co.uk/).
 
-I recently spent some time over the summer travelling around Europe and took the opportunity to gain some photography experience. You can see some of the highlights of the trip [here](/photos/europe/gallery/).
+I recently spent some time over the summer travelling around Europe and took the opportunity to gain some photography experience. You can see some of the highlights of the trip [here](/photos/europe/).

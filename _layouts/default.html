@@ -7,7 +7,7 @@
 
     {% include header.html %}
 
-    <div class="page-content {% if page.name == "index.html" %} banner-image{% endif %}">
+    <div class="page-content {% if page.homepage %} banner-image{% endif %}">
       <div class="wrap">
       {{ content }}
       </div>

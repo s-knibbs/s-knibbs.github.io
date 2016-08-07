@@ -5,9 +5,9 @@ permalink: /projects/
 mainnav: true
 ---
 
-##Personal Projects
+## Personal Projects
 
-###HTTP Live Streaming TV Server
+### HTTP Live Streaming TV Server
 
 This started as an experiment to see if I could use a Raspberry Pi to stream live broadcast TV over a local network. This will work similarly to the [EE TV box](https://broadband.ee.co.uk/ee-tv/ee-tv-features) which can stream a selection of channels to other devices such as tablets in the home.
 
@@ -19,9 +19,9 @@ To test this I am using a Raspberry Pi 2 along with the [PCTV nanoStick T2](http
 
 The project is currently in the 'beta' stage, there are a couple of major issues that need addressing for this to be truly usable. For more technical information and to try this out yourself see the [GitHub repo](#).
 
-##Client Projects
+## Client Projects
 
-###Regression Test system for a hardware model video encoder
+### Regression Test system for a hardware model video encoder
 
 As part of a team of 2 - 4 engineers I developed a database backed (MySQL) system for scheduling regression test jobs for a hardware model video encoder and collecting the results for display later. Test jobs are scheduled on a cluster of dedicated machines managed by Oracle Grid Engine.
 

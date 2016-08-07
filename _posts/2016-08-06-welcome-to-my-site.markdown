@@ -7,7 +7,7 @@ categories: jekyll website
 
 I'd like to welcome you to my new site. I have created this site both to promote myself professionally and to share some of my experiences. The site is still somewhat a work in progress, but I will be adding more content in the following weeks and maintaining my blog.
 
-###Building the site
+### Building the site
 
 The site is built using [Jekyll](https://jekyllrb.com/) which is a static site generator implemented in Ruby. I have chosen to use a static site generator rather than a content management system (CMS) such as Drupal or Wordpress to avoid some of the issues I have encountered with CMSs and to avoid the security headaches they provide.
 

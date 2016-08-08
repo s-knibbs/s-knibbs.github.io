@@ -1,2 +1,3 @@
 # Ignore the local site built by 'jekyll serve'
 /_site
+sandbox.html

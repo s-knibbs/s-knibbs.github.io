@@ -17,7 +17,7 @@ Instead, this tool uses [Apple's HTTP Live Streaming](https://developer.apple.co
 
 To test this I am using a Raspberry Pi 2 along with the [PCTV nanoStick T2](http://www.pctvsystems.com/Products/ProductsEuropeAsia/DVBTT2products/PCTVnanoStickT2/tabid/248/language/en-GB/Default.aspx) which is one of the few USB DVB tuners which supports DVB-T2, this is required to receive Freeview HD broadcasts in the UK. This works quite well in the UK, all of the main HD channels (BBC ONE HD, BBC TWO HD, ITV HD, Channel 4 HD) are broadcast on a single multiplex so only a single tuner is required.
 
-The project is currently in the 'beta' stage, there are a couple of major issues that need addressing for this to be truly usable. For more technical information and to try this out yourself see the [GitHub repo](#).
+The project is currently in the 'beta' stage, there are a couple of major issues that need addressing for this to be truly usable. For more technical information and to try this out yourself see the [GitHub repo](https://github.com/s-knibbs/dvb2hls).
 
 ## Client Projects
 

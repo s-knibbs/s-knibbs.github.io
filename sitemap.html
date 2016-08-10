@@ -1,0 +1,27 @@
+---
+layout: page
+title: Sitemap
+sitemap: false
+---
+
+<h2>Pages</h2>
+<ul class="nobullets noindent">
+{% for page in site.pages %}
+    {% unless page.layout == "gallery" or page.sitemap == false %}
+    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endunless %}
+{% endfor %}
+</ul>
+<h2>Galleries</h2>
+<ul class="nobullets noindent">
+{% for page in site.pages %}
+    {% if page.layout == "gallery" %}<li><a href="{{ page.url }}">{{ page.title }}</a></li>{% endif %}
+{% endfor %}
+</ul>
+<h2>Blog Posts</h2>
+<!-- TODO organise blog posts by category -->
+<ul class="nobullets noindent">
+{% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>

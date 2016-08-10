@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<ul class="nobullets flex-container">
+<ul class="nobullets flex-container noindent">
   {% for image in page.images %}
     <li class="gallery-image">
       <a href="{{ image.image_path | prepend: site.cdn }}" target="_blank">

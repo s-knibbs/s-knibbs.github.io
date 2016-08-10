@@ -12,3 +12,12 @@ cdn: https://dl.dropboxusercontent.com/u/2874365/site-images/
 # Build settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
+
+# Default variables for the YAML Front Matter
+defaults:
+  -  # set the 'is_post' variable to true for posts
+    scope:
+      path: ""
+      type: posts
+    values:
+      is_post: true

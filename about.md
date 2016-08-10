@@ -3,6 +3,9 @@ layout: page
 title: About Me
 permalink: /about-me/
 mainnav: true
+order: 0
+sitemap:
+  priority: 0.8
 ---
 
 Hi everyone, I am a software design engineer working primarily as a backend web developer. I deal with various technologies however, in particular I am interested in working more with embedded Linux systems (e.g. IoT devices).

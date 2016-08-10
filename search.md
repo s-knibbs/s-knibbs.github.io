@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Search Results
+sitemap: false
 ---
 
 Search functionality for this site is currently being implemented. In the meantime you can take a look at the complete [list of blog posts](/blog).

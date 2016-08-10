@@ -2,7 +2,8 @@
 layout: post
 title:  "Welcome to my personal site!"
 date:   2016-08-06 17:53:00
-categories: jekyll website
+categories: "Site Development"
+tags: jekyll html
 ---
 
 I'd like to welcome you to my new site. I have created this site both to promote myself professionally and to share some of my experiences. The site is still somewhat a work in progress, but I will be adding more content in the following weeks and maintaining my blog.

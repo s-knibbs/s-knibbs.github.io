@@ -8,8 +8,6 @@ github_username: s-knibbs
 linkedin_userid: simon-knibbs-41a7462b
 # CDN url to serve images.
 cdn: https://dl.dropboxusercontent.com/u/2874365/site-images/
-gems:
- - jekyll-sitemap
 
 # Build settings
 markdown: kramdown

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Cookie Policy
+title: "Cookie Policy"
+sitemap: true
 ---
 ## What Are Cookies
 

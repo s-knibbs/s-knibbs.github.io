@@ -5,6 +5,8 @@ long_title: Contact Me
 permalink: /contact/
 mainnav: true
 order: 3
+sitemap:
+  priority: 0.6
 ---
 
 Feel free to contact me regarding work opportunities, website issues / corrections or technical advice. However, please don't call me outside of normal business hours (8am - 6pm).

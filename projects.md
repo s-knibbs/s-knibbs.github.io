@@ -4,6 +4,8 @@ title: Projects
 permalink: /projects/
 mainnav: true
 order: 1
+sitemap:
+  priority: 0.7
 ---
 
 ## Personal Projects

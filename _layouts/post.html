@@ -12,4 +12,16 @@ layout: default
   {{ content }}
   </article>
 
+  {% if post.previous %}
+  <span class="prev">
+      <a href="{{ post.previous }}">&lt; Prev</a>
+  </span>
+  {% endif %}
+
+  {% if post.next %}
+  <span class="next">
+    <a href="{{ post.next }}">Next &gt;</a>
+  </span>
+  {% endif %}
+
 </div>

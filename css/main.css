@@ -41,9 +41,12 @@ a:visited { color: #205caa; }
 }
 
 input[type="text"] {
-  border: 1px white solid;
+  border: 1px #d1d1d1 solid;
   border-radius: 5px;
-  padding: 3px;
+  padding: 5px;
+  padding-bottom: 7px;
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 dt { font-weight: bold; font-family: 'Oxygen', sans-serif; }
@@ -51,12 +54,27 @@ dd { margin-left: 15px; }
 
 strong { font-weight: bold; }
 
+input[type="submit"] {
+  border: none;
+  background-color: #293263;
+  padding: 8px;
+  color: #c49f7f;
+  font-size: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 /* Helper Classes */
 /* ----------------------------------------------------------*/
 
 .nostyle {
   border: none;
   background: none;
+}
+
+.noindent {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .nobullets {
@@ -110,8 +128,8 @@ strong { font-weight: bold; }
 
 .search > input {
   max-width: 90%;
-  font-size: 100%;
-  font-family: 'Roboto', sans-serif;
+  padding: 4px;
+  border: none;
 }
 
 .search-submit {
@@ -416,12 +434,18 @@ strong { font-weight: bold; }
 
 .post pre.terminal code { background-color: #333; }
 
+.post .next {
+  float: right;
+}
+
 /* Gallery Styles */
 /* ----------------------------------------------------------*/
 
 .gallery-image {
   margin-bottom: 15px;
-  flex-basis: 50%
+  flex-basis: 47%;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .gallery-image > .image-caption {
@@ -431,7 +455,7 @@ strong { font-weight: bold; }
     color: grey;
 }
 
-.gallery-image img { max-width: 90%; }
+.gallery-image img { max-width: 100%; }
 
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
@@ -541,6 +565,9 @@ strong { font-weight: bold; }
   .home ul > li:first-child {
     font-size: 150%;
   }
+
+  /* Prevent images becoming too narrow at small screen sizes. */
+  .gallery-image { flex-basis: 100% }
 
   .site-nav .menu-icon {
     display: block;

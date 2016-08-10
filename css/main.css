@@ -22,6 +22,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Oxygen', sans-serif;
 }
 
+label {
+  font-weight: bold;
+  font-family: 'Oxygen', sans-serif;
+  margin-right: 10px;
+}
+
 h3 { color: #616161; }
 
 a         { color: #2a7ae2; text-decoration: none; }
@@ -40,13 +46,24 @@ a:visited { color: #205caa; }
   zoom: 1;
 }
 
-input[type="text"] {
-  border: 1px #d1d1d1 solid;
+input, textarea {
+  font-size: 100%;
   border-radius: 5px;
   padding: 5px;
-  padding-bottom: 7px;
-  font-size: 100%;
+  border: 1px #d1d1d1 solid;
   font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+
+}
+
+input[type="text"], input[type="email"] {
+  border: 1px #d1d1d1 solid;
+  padding-bottom: 6px;
 }
 
 dt { font-weight: bold; font-family: 'Oxygen', sans-serif; }
@@ -57,9 +74,8 @@ strong { font-weight: bold; }
 input[type="submit"] {
   border: none;
   background-color: #293263;
-  padding: 8px;
+  padding: 6px;
   color: #c49f7f;
-  font-size: 100%;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -327,7 +343,11 @@ input[type="submit"] {
 
 /* Contact page styling */
 
-.post-content > .skype-contact { margin-top: -30px; }
+.post-content > .skype-contact {
+  margin-top: -35px;
+  margin-bottom: -35px;
+  font-family: 'Oxygen', sans-serif;
+}
 
 .skype-contact > strong {
   vertical-align: 3px;

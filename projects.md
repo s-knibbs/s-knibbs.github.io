@@ -3,6 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 mainnav: true
+order: 1
 ---
 
 ## Personal Projects

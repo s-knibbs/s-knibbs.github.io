@@ -88,6 +88,10 @@ input[type="submit"] {
   background: none;
 }
 
+.clearfix {
+  clear: both;
+}
+
 .noindent {
   margin-left: 0 !important;
   padding-left: 0 !important;

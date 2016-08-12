@@ -8,10 +8,27 @@ $(document).ready(function () {
         {
             var query_text = decodeURIComponent(query[1].replace('+', ' '));
             var results = index.search(query_text);
-            // TODO: Display resuls here.
-            for (var res of results)
+
+            if (results.length > 0)
             {
-                console.log(index.documentStore.docs[res.ref].title);
+                $('#results').show();
+                // Prepare the result template
+                var tmpl = $('#result-template').html();
+                Mustache.parse(tmpl);
+                var result_list = $('#results-list');
+
+                $('#results-count').text(results.length);
+
+                for (var res of results)
+                {
+                    var doc = index.documentStore.docs[res.ref];
+                    result_list.append(Mustache.render(tmpl, doc));
+                }
+                highlightContent(window.location.href);
+            }
+            else
+            {
+                $('#no-results').show();
             }
         }
     });

@@ -26,6 +26,27 @@ function hashString(str) {
     return parseInt(hex_digest, 16) % 49979687;
 }
 
+/**
+ * Sanitises the HTML within a dom node
+ * by removing all script and style tags.
+ */
+function sanitiseHtml(node) {
+    for (var child of node.childNodes)
+    {
+        if (child.tagName && child.tagName.match(/script|style/i))
+        {
+            node.removeChild(child);
+        }
+    }
+}
+
+/**
+ * Truncates a string to a maximum number of words.
+ */
+function truncateWords(str, words) {
+    return str.split(/\b/).slice(0, words * 2).join('');
+}
+
 const optionParams = [
     {name: 'index-dir', alias: 'd', type: String, defaultOption: true},
     {name: 'ignore', alias: 'i', type: String, multiple: true},
@@ -79,20 +100,29 @@ else
             // Parse the DOM.
             var document = jsdom.jsdom(html);
             var meta_title = document.querySelector('meta[property="og:title"]');
-            var meta_description = document.querySelector('meta[name="description"]');
             var article = document.querySelector('article');
 
             // Only select pages with a title and article section.
             if (meta_title && article)
             {
+                sanitiseHtml(article);
+
                 if (options.verbose)
                 {
                     console.log("Indexing: " + file);
                 }
+
+                var description = document.querySelector('article > p');
+
+                // Fallback to whole article if no paragraphs present.
+                if (!description)
+                {
+                    description = article;
+                }
                 var doc = {
                     title: meta_title.content,
                     body: article.textContent,
-                    description: meta_description.content,
+                    description: truncateWords(description.textContent, 50),
                     url: file.replace(new RegExp('^' + options['index-dir']), ''),
                     id: hashString(file)
                 };

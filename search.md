@@ -4,12 +4,29 @@ title: Search Results
 sitemap: false
 scripts:
   - "/js/elasticlunr.min.js"
+  - "/js/mustache.min.js"
   - "/js/search-results.js"
 ---
+<script id="result-template" type="x-tmpl-mustache">
+{% raw %}
+<li>
+<h2 class="result-link"><a href="{{url}}#enable-highlight">{{title}}</a></h2>
+<p>{{description}}...</p>
+</li>
+{% endraw %}
+</script>
 
-Search functionality for this site is currently being implemented. In the meantime you can take a look at the complete [list of blog posts](/blog).
-Alternatively, it is possible to search this site using [Google](https://www.google.com) with a query in the following format:
+<noscript>
+  Please enable JavaScript in your browser to view search results.
+</noscript>
 
-```
-site:{{ site.github_username }}.github.io YOUR SEARCH TERM
-```
+<div id="no-results" style="display: none">
+    No results found.
+</div>
+
+<div id="results" style="display: none">
+    <p>Found <span id="results-count"></span> result(s).</p>
+
+    <ul id="results-list" class="nobullets noindent">
+    </ul>
+</div>

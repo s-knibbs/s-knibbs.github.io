@@ -110,6 +110,10 @@ input[type="submit"] {
   flex-flow: row wrap;
 }
 
+.search-highlight {
+  background-color: orange;
+}
+
 
 /* Layout Styles */
 /* ----------------------------------------------------------*/
@@ -326,7 +330,7 @@ input[type="submit"] {
 
 .posts li { margin-bottom: 30px; }
 
-.posts .post-link {
+.posts .post-link, #results-list .result-link {
   font-size: 24px;
   letter-spacing: -1px;
   line-height: 1;

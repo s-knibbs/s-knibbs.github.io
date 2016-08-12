@@ -27,11 +27,12 @@ layout: null
         <priority>{{ page.sitemap.priority }}</priority>
         {% endif %}
         {% if page.images != null and page.images != empty %}
+        {% for image in page.images %}
         <image:image>
-          {% for image in page.images %}
           <image:loc>{{ site.cdn }}{{ image.image_path }}</image:loc>
-          {% endfor %}
+          <image:caption>{{ image.title }}</image:caption>
         </image:image>
+        {% endfor %}
         {% endif %}
        </url>
     {% endif %}

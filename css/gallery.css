@@ -1,0 +1,24 @@
+---
+layout: stylesheet
+imports:
+  - "/css/post.css"
+---
+
+/* Gallery Styles */
+/* ----------------------------------------------------------*/
+
+.gallery-image {
+  margin-bottom: 15px;
+  flex-basis: 47%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.gallery-image > .image-caption {
+    display: block;
+    margin-top: -8px;
+    font-size: 90%;
+    color: grey;
+}
+
+.gallery-image img { max-width: 100%; }

@@ -2,6 +2,8 @@
 layout: page
 title: Search Results
 sitemap: false
+stylesheets:
+  - "/css/post-list.css"
 scripts:
   - "/js/elasticlunr.min.js"
   - "/js/mustache.min.js"

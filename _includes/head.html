@@ -3,10 +3,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% seo %}
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    {% capture main_css %}
+    {% include main.css %}
+    {% endcapture %}
+
+    <!-- link rel="preload" polyfill -->
+    <script type="text/javascript">{% include loadCSS.min.js %}</script>
+    <script type="text/javascript">{% include cssrelpreload.min.js %}</script>
+    <style type="text/css">{{ main_css | scssify }}</style>
+
+    <!-- TODO: Use concat filter here when supported. -->
+    {% for stylesheet in site.font_styles %}
+    <link rel="preload" href="{{ stylesheet }}" onload="this.rel = 'stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ stylesheet }}" type="text/css"></noscript>
+    {% endfor %}
+    {% for stylesheet in page.stylesheets %}
+    <link rel="stylesheet" href="{{ stylesheet }}" type="text/css">
+    {% endfor %}
 
 </head>

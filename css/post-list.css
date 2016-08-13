@@ -1,0 +1,29 @@
+---
+layout: stylesheet
+imports:
+  - "/css/post.css"
+---
+/* Post list styling */
+
+.posts { list-style-type: none; }
+
+.posts li { margin-bottom: 30px; }
+
+.posts .post-link, #results-list .result-link {
+  font-size: 24px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.posts .post-date {
+  display: block;
+  font-size: 15px;
+  color: #818181;
+  position: relative;
+  bottom: 15px;
+}
+
+.post-content > ul.post-list {
+  margin-left: 0;
+  padding-left: 0;
+}

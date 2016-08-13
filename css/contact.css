@@ -1,0 +1,21 @@
+---
+layout: stylesheet
+imports:
+  - "/css/post.css"
+---
+/* Contact page styling */
+
+.post-content > .skype-contact {
+  margin-top: -35px;
+  margin-bottom: -35px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.skype-contact > strong {
+  vertical-align: 3px;
+}
+
+.skype-contact > p {
+ display: inline;
+}
+

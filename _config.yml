@@ -1,13 +1,20 @@
 # Site settings
 title: Simon Knibbs
+author: Simon J Knibbs
 email: simon.knibbs@gmail.com
-description: "I am a software engineer with 5 years industry experience. The languages I work with most are Python & HTML/CSS/JS and C/C++ for low-level work."
+description: "Software engineer with 5 years industry experience. The languages I work with most are Python & HTML/CSS/JS and C/C++ for low-level work."
 baseurl: ""
 url: "https://s-knibbs.github.io"
+
+# Social media
+
 github_username: s-knibbs
 linkedin_userid: simon-knibbs-41a7462b
 
 # External URLs
+social:
+  links:
+    - "https://uk.linkedin.com/in/simon-knibbs-41a7462b"
 
 # CDN url to serve images.
 cdn: https://dl.dropboxusercontent.com/u/2874365/site-images/
@@ -18,6 +25,10 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 exclude:
   - "package.json"
+
+# Gems
+gems:
+  - jekyll-seo-tag
 
 # Default variables for the YAML Front Matter
 defaults:

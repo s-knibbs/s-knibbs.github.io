@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    build-extras (1.0)
+      cssminify (~> 1.0)
+      uglifier (~> 3.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    cssminify (1.0.2)
+    execjs (2.7.0)
+    uglifier (3.0.1)
+      execjs (>= 0.3.0, < 3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  build-extras!
+  bundler (~> 1.11)
+
+BUNDLED WITH
+   1.11.2

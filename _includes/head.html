@@ -9,18 +9,28 @@
     {% include main.css %}
     {% endcapture %}
 
-    <!-- link rel="preload" polyfill -->
-    <script type="text/javascript">{% include loadCSS.min.js %}</script>
-    <script type="text/javascript">{% include cssrelpreload.min.js %}</script>
     <style type="text/css">{{ main_css | scssify }}</style>
 
     <!-- TODO: Use concat filter here when supported. -->
     {% for stylesheet in site.font_styles %}
-    <link rel="preload" href="{{ stylesheet }}" onload="this.rel = 'stylesheet'">
+    <link rel="preload" href="{{ stylesheet }}" as="style" onload="this.rel = 'stylesheet'">
     <noscript><link rel="stylesheet" href="{{ stylesheet }}" type="text/css"></noscript>
     {% endfor %}
     {% for stylesheet in page.stylesheets %}
-    <link rel="stylesheet" href="{{ stylesheet }}" type="text/css">
+    <link rel="preload" href="{{ stylesheet }}" as="style" onload="this.rel = 'stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ stylesheet }}" type="text/css"></noscript>
     {% endfor %}
 
+    <!-- link rel="preload" polyfill -->
+    {% if site.environment == "production" %}
+    <script type="text/javascript">
+    {% include loadCSS.min.js %}
+    {% include cssrelpreload.min.js %}
+    </script>
+    {% else %}
+    <script type="text/javascript">
+    {% include loadCSS.js %}
+    {% include cssrelpreload.js %}
+    </script>
+    {% endif %}
 </head>

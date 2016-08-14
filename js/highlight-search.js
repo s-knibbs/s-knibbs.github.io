@@ -22,8 +22,9 @@ function highlightContent(url) {
      */
     function getTextNodes(node)
     {
-        for (var child of node.childNodes)
+        for (var i = 0; i < node.childNodes.length; i++)
         {
+            var child = node.childNodes[i];
             if (child.nodeType === 3)
             {
                 text_nodes.push(child);
@@ -39,9 +40,9 @@ function highlightContent(url) {
 
     var re = new RegExp(terms.join('|'), 'gi');
 
-    for (var node of text_nodes)
+    for (var i = 0; i < text_nodes.length; i++)
     {
-        $(node).replaceWith(function () {
+        $(text_nodes[i]).replaceWith(function () {
             return this.wholeText.replace(re, '<span class="search-highlight">$&</span>');
         });
     }

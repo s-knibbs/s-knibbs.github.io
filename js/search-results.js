@@ -19,9 +19,9 @@ $(document).ready(function () {
 
                 $('#results-count').text(results.length);
 
-                for (var res of results)
+                for (var i = 0; i < results.length; i++)
                 {
-                    var doc = index.documentStore.docs[res.ref];
+                    var doc = index.documentStore.docs[results[i].ref];
                     result_list.append(Mustache.render(tmpl, doc));
                 }
                 highlightContent(window.location.href);

@@ -1,3 +1,6 @@
+# Production config
+environment: production
+
 # Site settings
 title: Simon Knibbs
 author: Simon J Knibbs
@@ -27,14 +30,19 @@ jquery_url: https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 # Build settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
+safe: false
 exclude:
   - "package.json"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "*.sh"
 sass:
   style: compressed
 
 # Gems
 gems:
   - jekyll-seo-tag
+  - build-extras
 
 # Default variables for the YAML Front Matter
 defaults:

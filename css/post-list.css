@@ -1,8 +1,8 @@
 ---
 layout: stylesheet
-imports:
-  - "/css/post.css"
 ---
+{% include post.css %}
+
 /* Post list styling */
 
 .posts { list-style-type: none; }

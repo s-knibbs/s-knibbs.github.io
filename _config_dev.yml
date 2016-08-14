@@ -1,0 +1,20 @@
+# Development config - overrides for the production config.
+environment: development
+
+exclude:
+  - "package.json"
+  - "data/index.json" # Exclude search index to prevent infinite rebuild loop
+  - "*.min.js"  # Exclude minified javascript
+  - "*.min.css" #  Exclude minified CSS
+  - "*.sh"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+# Always include third-party minified libraries
+include:
+  - "elasticlunr.min.js"
+  - "mustache.min.js"
+
+# Disable HTML minification
+compress_html:
+  blanklines: true

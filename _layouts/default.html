@@ -19,6 +19,7 @@ layout: compress
     {% include footer.html %}
 
     <script src="{{ site.jquery_url }}"></script>
+    {% if site.environment == "production" %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -27,11 +28,19 @@ layout: compress
 
       ga('create', 'UA-82258286-1', 'auto');
       ga('send', 'pageview');
-
     </script>
+    {% endif %}
+    {% if site.environment == "production" %}
+    <script type="text/javascript" src="/js/highlight-search.min.js"></script>
+    {% else %}
     <script type="text/javascript" src="/js/highlight-search.js"></script>
+    {% endif %}
     {% for script in page.scripts %}
+    {% if site.environment == "production" %}
+    <script type="text/javascript" src="{{ script | remove: '.min' | remove: '.js' | append: '.min.js' }}"></script>
+    {% else %}
     <script type="text/javascript" src="{{ script }}"></script>
+    {% endif %}
     {% endfor %}
     </body>
 </html>

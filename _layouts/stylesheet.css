@@ -1,8 +1,4 @@
 ---
 layout: none
 ---
-{% for import in page.imports %}
-@import url("{{ import }}");
-{% endfor %}
-
-{{ content }}
+{{ content | scssify }}

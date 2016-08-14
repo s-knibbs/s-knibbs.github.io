@@ -1,8 +1,7 @@
 ---
 layout: stylesheet
-imports:
-  - "/css/post.css"
 ---
+{% include post.css %}
 
 /* Gallery Styles */
 /* ----------------------------------------------------------*/

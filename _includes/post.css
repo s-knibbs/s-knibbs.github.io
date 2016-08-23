@@ -99,3 +99,12 @@
   float: right;
 }
 
+@media screen and (min-width: 600px) {
+
+  article > img.main-image {
+    float: left;
+    margin-top: 7px;
+    margin-right: 20px;
+  }
+
+}

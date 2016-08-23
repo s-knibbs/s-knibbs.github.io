@@ -12,6 +12,9 @@ stylesheets:
   </header>
 
   <article class="post-content">
+  {% if page.image %}
+    <img class='main-image' src='{{ page.image.url }}' alt='{{ page.image.name }}' title='{{ page.image.name }}' />
+  {% endif %}
   {{ content }}
   </article>
 

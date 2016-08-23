@@ -22,6 +22,20 @@ To test this I am using a Raspberry Pi 2 along with the [PCTV nanoStick T2](http
 
 The project is currently in the 'beta' stage, there are a couple of major issues that need addressing for this to be truly usable. For more technical information and to try this out yourself see the [GitHub repo](https://github.com/s-knibbs/dvb2hls).
 
+### SourceSpell - Source code spellchecking utility
+
+I created this tool for checking spelling in code comments and string literals. Initially, I looked around for existing tools
+to do this, but could find anything that worked with a wide range of languages.
+
+I had the idea of using the [Pygments](http://pygments.org/) code highlighting library for extracting string literals and comments. Pygments supports a wide and growing list of languages including
+markup languages including HTML and LaTex.
+
+Spellchecking is provided by the [enchant](http://pythonhosted.org/pyenchant/) library which is able to work with a number of spellchecking
+backends incuding *Aspell* and *Hunspell*. The tool includes an interactive mode for quickly making corrections.
+
+I have now released this tool as a [Python package](https://pypi.python.org/pypi/SourceSpell/1.1).
+You can also read more in [the documentation](https://s-knibbs.github.io/sourcespell/).
+
 ## Client Projects
 
 ### Regression Test system for a hardware model video encoder
@@ -35,3 +49,10 @@ Later additions to the project include:
 - The addition of video quality tests, used primarily to test the addition of [HEVC](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding) support to the encoder. This included updating the web interface to automatically generate graphs of bitrate vs video quality.
 - The development of a dashboard screen to display the job-queue status and latest trunk test results at a glance.
 - Support for third-party encoders for benchmarking video quality.
+
+### Touchscreen Simulator Tool
+
+I developed a command-line utility, implemented in C#, for modelling different touchscreen topologies and testing the resulting touch sensing accuracy.
+The tool generates artificial touches by interpolating from detailed simulation data. The tool then passes the touch data to the
+touch firmware (ported to run on a desktop) and returns the results in CSV format.
+

@@ -9,7 +9,7 @@ I recently had a play around with [Ubuntu on Windows](https://msdn.microsoft.com
 recently released Windows 10 anniversary update.
 
 For the uninitiated, Ubuntu on Windows is a command line environment running the server version of Ubuntu 14.04 LTS. It runs on top
-of a compatibility layer called [Windows subsytem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (WSL).
+of a compatibility layer called [Windows subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (WSL).
 
 It functions similarly to the [Wine](https://www.winehq.org/) tool for running Windows apps in Linux by providing binary compatibility for Linux apps.
 This is in contrast to the existing [Cygwin](https://www.cygwin.com/) tool, which uses linux apps compiled to work on Windows.
@@ -35,7 +35,7 @@ using a development server such as `jekyll serve` since inotify is required to l
 The integration with Windows could be improved. The entire Windows filesystem can be accessed from `/mnt/c/`. However, accessing the Ubuntu filesystem from Windows
 is not as obvious. It is possible to access the home directories under `C:\Users\USERNAME\AppData\Local\lxss\home`, although this is undocumented.
 
-I also found that symlinks to the Windows filesystem don't currently behave correctly (attempting to change directory inside a symlinked directory had no effect for me). You may want to do this to provide a shortcut to your
+It seems that symlinks to the Windows filesystem don't currently behave correctly (attempting to change directory inside a symlinked directory had no effect for me). You may want to do this to provide a shortcut to your
 Windows profile directory.
 
 Overall, I think this is a useful tool and is certainly much quicker and easier to setup than a full virtual machine. However, for now I will continue to use a virtual machine

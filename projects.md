@@ -31,7 +31,7 @@ I had the idea of using the [Pygments](http://pygments.org/) code highlighting l
 markup languages including HTML and LaTex.
 
 Spellchecking is provided by the [enchant](http://pythonhosted.org/pyenchant/) library which is able to work with a number of spellchecking
-backends incuding *Aspell* and *Hunspell*. The tool includes an interactive mode for quickly making corrections.
+backends including *Aspell* and *Hunspell*. The tool includes an interactive mode for quickly making corrections.
 
 I have now released this tool as a [Python package](https://pypi.python.org/pypi/SourceSpell/1.1).
 You can also read more in [the documentation](https://s-knibbs.github.io/sourcespell/).

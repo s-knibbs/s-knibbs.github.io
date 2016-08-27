@@ -30,24 +30,18 @@ layout: compress
       ga('send', 'pageview');
     </script>
     {% endif %}
-    {% if site.environment == "production" %}
-    <script type="text/javascript" src="/js/highlight-search.min.js"></script>
-    {% else %}
-    <script type="text/javascript" src="/js/highlight-search.js"></script>
-    <script type="text/javascript" src="/js/auto-reload.js"></script>
-    <script type="text/javascript" src="/js/enable-editing.js"></script>
-    {% endif %}
-    {% for script in page.scripts %}
-    {% if site.environment == "production" %}
-    <script type="text/javascript" src="{{ script | remove: '.min' | remove: '.js' | append: '.min.js' }}"></script>
-    {% else %}
-    <script type="text/javascript" src="{{ script }}"></script>
-    {% endif %}
-    {% endfor %}
 
+    {% include scripts.html scripts=site.global_scripts %}
+    {% include scripts.html scripts=page.scripts %}
+    {% if site.environment == "development" %}
+    {% include scripts.html scripts=site.dev_scripts %}
+    {% endif %}
+
+    {% if page.is_post %}
     <!-- Scripts for social media widgets -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+    {% endif %}
     </body>
 </html>

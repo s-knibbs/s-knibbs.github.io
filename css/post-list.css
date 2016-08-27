@@ -27,3 +27,7 @@ layout: stylesheet
   margin-left: 0;
   padding-left: 0;
 }
+
+#results > p, #no-results > p {
+  margin: 20px 0;
+}

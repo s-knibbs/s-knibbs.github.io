@@ -68,3 +68,7 @@ defaults:
     values:
       stylesheets:
         - "/css/gallery.css"
+
+global_scripts:
+    - "/js/highlight-search.js"
+    - "/js/shortcuts.js"

@@ -18,3 +18,7 @@ include:
 # Disable HTML minification
 compress_html:
   blanklines: true
+
+dev_scripts:
+    - "/js/auto-reload.js"
+    - "/js/enable-editing.js"

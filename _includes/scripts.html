@@ -1,0 +1,10 @@
+{% comment %}
+<!-- Snippet to include a list of scripts -->
+{% endcomment %}
+{% for script in include.scripts %}
+{% if site.environment == "production" %}
+<script type="text/javascript" src="{{ script | remove: '.min' | remove: '.js' | append: '.min.js' }}"></script>
+{% else %}
+<script type="text/javascript" src="{{ script }}"></script>
+{% endif %}
+{% endfor %}

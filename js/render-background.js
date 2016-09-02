@@ -98,20 +98,24 @@ function drawGrid() {
   var width = canvas.width = parseInt(style.width);
   var height = canvas.height = parseInt(style.height);
 
-  if (canvas.getContext) {
+  if (canvas.getContext)
+  {
     var ctx = canvas.getContext('2d');
-    var radius = 18;
-    var step = 40;
+    var radius = 13;
+    var step = 30;
 
     var grid_width = parseInt(width / step);
-    var plane = conwayGOL(grid_width, parseInt(height / step), 4);
+    var grid_height = parseInt(height / step);
+    var plane = conwayGOL(grid_width, grid_height, 4);
 
     // Fill styles for the different cell states
     var fill_styles = ["#f3f3f3", "#d6efe3", "#b4bade"];
 
     // xr and yr in canvas coordinates.
-    for (var x = 0, xr = 0; xr <= width; x++, xr += step) {
-      for (var y = 0, yr = 0; yr <= height; y++, yr += step) {
+    for (var x = 0, xr = 0; x < grid_width; x++, xr += step)
+    {
+      for (var y = 0, yr = 0; y < grid_height; y++, yr += step)
+      {
 
         ctx.fillStyle = fill_styles[plane[x + y * grid_width]];
         ctx.beginPath();
@@ -120,6 +124,15 @@ function drawGrid() {
         ctx.fill();
       }
     }
+
+    var gradient = ctx.createLinearGradient(0, 0, 0, height);
+    gradient.addColorStop(0, "#f3f3f3");
+    gradient.addColorStop(0.4, "rgba(255,255,255,0)");
+    gradient.addColorStop(0.6, "rgba(255,255,255,0)");
+    gradient.addColorStop(1, "#f3f3f3");
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
 
     // Set the background image of the
     var url = canvas.toDataURL();

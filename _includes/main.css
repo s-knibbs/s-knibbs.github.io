@@ -123,6 +123,7 @@ input[type="submit"] {
 .site-header {
   min-height: 60px;
   background-color: #293263;
+  z-index: 1;
 }
 
 .site-title,

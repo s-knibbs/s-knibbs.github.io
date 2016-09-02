@@ -6,7 +6,38 @@ mainnav: true
 order: 1
 sitemap:
   priority: 0.7
+scripts:
+  - "/js/header-link.js"
 ---
+
+## Commercial Projects
+
+### Regression Test system for a hardware model video encoder
+
+As part of a team of 2 - 4 engineers I developed a database backed (MySQL) system for scheduling regression test jobs for a hardware model video encoder and collecting the results for display later. Test jobs are scheduled on a cluster of dedicated machines managed by Oracle Grid Engine.
+
+The system is composed of a client GUI written in Python and Qt, a script wrapper for launching the encoder and collecting the results, and a web interface for viewing the results. The GUI is used to select which build of the encoder to run (branch and revision number) and which tests to run.
+
+Later additions to the project include:
+
+- The addition of video quality tests, used primarily to test the addition of [HEVC](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding) support to the encoder. This included updating the web interface to automatically generate graphs of bitrate vs video quality.
+- The development of a dashboard screen to display the job-queue status and latest trunk test results at a glance.
+- Support for third-party encoders for benchmarking video quality.
+
+### Client Portal at ITDev
+
+This is a project management system built around the [Trac](https://trac.edgewall.org/) issue tracking system. Some of the features and enhancements I delivered:
+
+- Improvements to the test automation and coverage, including integration tests run with [Selenium](http://www.seleniumhq.org/) and run using [Jenkins](https://jenkins.io/).
+- Support for agile projects managed using SCRUM or Kanban. This included the addition of SCRUM and Kanban boards to trac and an interactive burndown chart.
+- Adding support for the git version control system for new projects.
+- Development of various [trac plugins](https://trac.edgewall.org/wiki/TracPlugins) to customise the permissions and add new [wiki macros](https://trac.edgewall.org/wiki/WikiMacros).
+
+### Touchscreen Simulator Tool
+
+I developed a command-line utility, implemented in C#, for modelling different touchscreen topologies and testing the resulting touch sensing accuracy.
+The tool generates artificial touches by interpolating from detailed simulation data. The tool then passes the touch data to the
+touch firmware (ported to run on a desktop) and returns the results in CSV format.
 
 ## Personal Projects
 
@@ -35,24 +66,4 @@ backends including *Aspell* and *Hunspell*. The tool includes an interactive mod
 
 I have now released this tool as a [Python package](https://pypi.python.org/pypi/SourceSpell/1.1).
 You can also read more in [the documentation](https://s-knibbs.github.io/sourcespell/).
-
-## Client Projects
-
-### Regression Test system for a hardware model video encoder
-
-As part of a team of 2 - 4 engineers I developed a database backed (MySQL) system for scheduling regression test jobs for a hardware model video encoder and collecting the results for display later. Test jobs are scheduled on a cluster of dedicated machines managed by Oracle Grid Engine.
-
-The system is composed of a client GUI written in Python and Qt, a script wrapper for launching the encoder and collecting the results, and a web interface for viewing the results. The GUI is used to select which build of the encoder to run (branch and revision number) and which tests to run.
-
-Later additions to the project include:
-
-- The addition of video quality tests, used primarily to test the addition of [HEVC](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding) support to the encoder. This included updating the web interface to automatically generate graphs of bitrate vs video quality.
-- The development of a dashboard screen to display the job-queue status and latest trunk test results at a glance.
-- Support for third-party encoders for benchmarking video quality.
-
-### Touchscreen Simulator Tool
-
-I developed a command-line utility, implemented in C#, for modelling different touchscreen topologies and testing the resulting touch sensing accuracy.
-The tool generates artificial touches by interpolating from detailed simulation data. The tool then passes the touch data to the
-touch firmware (ported to run on a desktop) and returns the results in CSV format.
 

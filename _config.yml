@@ -22,6 +22,7 @@ social:
 font_styles:
   - "https://fonts.googleapis.com/css?family=Roboto:300,400,700"
   - "https://fonts.googleapis.com/css?family=Oxygen:400,700"
+  - "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
 
 # CDN url to serve images.
 cdn: https://dl.dropboxusercontent.com/u/2874365/site-images/
@@ -55,6 +56,8 @@ defaults:
       stylesheets:
         - "/css/post.css"
         - "/css/highlight.css"
+      scripts:
+        - "/js/header-link.js"
   -
     scope:
       path: ""

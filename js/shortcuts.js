@@ -1,16 +1,46 @@
 'use strict';
 
 $(document).ready(function () {
-    $(document).keypress(function (event) {
+
+    function focusSearchInput()
+    {
+        var $header = $('.site-header')
+        $header.css({
+            position: 'fixed',
+            left: '0',
+            right: '0',
+            top: '0'
+        });
+        $('.page-content').css('margin-top', $header.height());
+        $('input[name="query"]').focus();
+    }
+
+    function resetHeader()
+    {
+        $('.site-header').css('position', 'static');
+        $('.page-content').css('margin-top', '0');
+        $('input[name="query"]').blur();
+    }
+
+    $(document).keyup(function (event) {
         // Ignore event if an input or textarea is active.
         var active = event.currentTarget.activeElement;
-        if (!active.nodeName.match(/textarea|input/i))
+        switch (event.key)
         {
-            if (event.key == '/')
-            {
-                $('input[name="query"]').focus();
-                event.preventDefault();
-            }
+            case '/':
+                if (!active.nodeName.match(/textarea|input/i))
+                {
+                    focusSearchInput();
+                    event.preventDefault();
+                }
+                break;
+            case 'Escape':
+                resetHeader();
+                break;
+            default:
+                break;
         }
     });
+
+    $('.page-content').click(resetHeader);
 });

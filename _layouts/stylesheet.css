@@ -1,4 +1,8 @@
 ---
 layout: none
 ---
+{% if site.environment == "production" %}
 {{ content | scssify }}
+{% else %}
+{{ content }}
+{% endif %}

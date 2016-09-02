@@ -33,6 +33,7 @@
   line-height: 1;
   font-weight: 300;
   margin: 20px 0 20px;
+  position: relative;
 }
 
 .post-content h2 {
@@ -128,14 +129,15 @@ th:first-child, td:first-child {
   border-style: none;
 }
 
-@media screen and (min-width: 600px) {
+article img.main-image {
+  margin-left: 5%;
+  max-width: 90%;
+  margin-bottom: 0;
+}
 
-  article > img.main-image {
-    float: left;
-    margin-top: 7px;
-    margin-right: 20px;
-  }
-
+article > figure > figcaption {
+  font-size: 85%;
+  text-align: center;
 }
 
 .social-widget-container {

@@ -1,5 +1,6 @@
 # Development config - overrides for the production config.
 environment: development
+future: true
 
 exclude:
   - "package.json"

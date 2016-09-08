@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Emscripten-Generated Code</title>
+    <style>
+      body {
+        font-family: arial;
+        margin: 0;
+        padding: none;
+      }
+
+      .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
+      div.emscripten { text-align: center; }      
+      div.emscripten_border { border: 1px solid black; }
+      /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+      canvas.emscripten { border: 0px none; }
+
+      #status {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 30px;
+        margin-left: 20px;
+        font-weight: bold;
+        color: rgb(120, 120, 120);
+      }
+
+      #progress {
+        height: 20px;
+        width: 30px;
+      }
+
+      #controls {
+        vertical-align: top;
+        margin-right: 10px;
+      }
+
+      #canvas {
+        height: 600px;
+        max-width: 100%;
+      }
+
+      #output {
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 10px;
+        border-left: 0px;
+        border-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        display: block;
+        background-color: black;
+        color: white;
+        font-family: 'Lucida Console', Monaco, monospace;
+        outline: none;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 5px;
+      }
+      li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      label {
+        padding-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+<span id='controls'>
+  <ul>
+  <li><label for="fill">Initial Fill:</label><span><input autocomplete="off" type="text" name="fill" id="fill" value="50"></span></li>
+  <li><label for="survives">Survives:</label><span><input autocomplete="off" type="text" name="survives" id="survives" value="23"></span></li>
+  <li><label for="born">Born:</label><span><input autocomplete="off" type="text" name="born" id="born" value="3"></span></li>
+  <li>
+    <span><label for="setAliveColour">Alive cell colour:</label>
+    <input autocomplete="off" type="color" name="setAliveColour" value="#ff1a1a" onchange="Module.setAliveColour(this.value)"></span>
+  </li>
+  <li>
+    <span><label for="setDyingColour">Dying cell colour:</label><input autocomplete="off" type="color" name="setDyingColour" value="#a4e443" onchange="Module.setDyingColour(this.value)"></span>
+  </li>
+  <li>
+    <span><input type="button" value="Run/Restart" onclick="Module.restart()"></span>
+  </li>
+  <li>
+    <span><input type="button" value="Fullscreen" onclick="Module.requestFullScreen(true,false)"></span>
+    <span><input type="button" value="Pause/Resume" onclick="Module.toggleMainLoop()"></span>
+  </li>
+  </ul>
+</span>
+
+    <div class="emscripten">
+      <progress value="0" max="100" id="progress" hidden=1></progress>
+    </div>
+    <div class="canvas-container">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    </div>
+    <textarea id="output" rows="8"></textarea>
+
+    <script type='text/javascript'>
+      var progressElement = document.getElementById('progress');
+
+      var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function() {
+          var element = document.getElementById('output');
+          if (element) element.value = ''; // clear browser cache
+          return function(text) {
+            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+            console.log(text);
+            if (element) {
+              element.value += text + "\n";
+              element.scrollTop = element.scrollHeight; // focus on bottom
+            }
+          };
+        })(),
+        printErr: function(text) {
+          if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+          console.error(text);
+        },
+        canvas: (function() {
+          var canvas = document.getElementById('canvas');
+          return canvas;
+        })(),
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {
+          this.totalDependencies = Math.max(this.totalDependencies, left);
+        }
+      };
+    </script>
+    <script>
+        (function() {
+          var memoryInitializer = 'index.js.mem';
+          if (typeof Module['locateFile'] === 'function') {
+            memoryInitializer = Module['locateFile'](memoryInitializer);
+          } else if (Module['memoryInitializerPrefixURL']) {
+            memoryInitializer = Module['memoryInitializerPrefixURL'] + memoryInitializer;
+          }
+          var xhr = Module['memoryInitializerRequest'] = new XMLHttpRequest();
+          xhr.open('GET', memoryInitializer, true);
+          xhr.responseType = 'arraybuffer';
+          xhr.send(null);
+        })();
+    </script>
+    <script src="index.min.js"></script>
+    <script>
+        var funcs = ['setAliveColour', 'setDyingColour'];
+        for (var i = 0; i < funcs.length; i++)
+        {
+          Module[funcs[i]] = _setColour.bind(null, funcs[i]);
+        }
+    </script>
+  </body>
+</html>

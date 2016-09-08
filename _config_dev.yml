@@ -15,6 +15,7 @@ exclude:
 include:
   - "elasticlunr.min.js"
   - "mustache.min.js"
+  - "index.min.js"
 
 # Disable HTML minification
 compress_html:

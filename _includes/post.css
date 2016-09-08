@@ -149,3 +149,7 @@ article > figure > figcaption {
 body > div:last-of-type {
     left: -10000px !important;
 }
+
+iframe {
+  border: 0;
+}

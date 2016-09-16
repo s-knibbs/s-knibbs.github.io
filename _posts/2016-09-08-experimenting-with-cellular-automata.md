@@ -19,7 +19,7 @@ There are a number of applications to cellular automata, including:
 The Game of Life automaton can even be used to [simulate itself](https://www.youtube.com/watch?v=xP5-iIeKXE8).
 
 I created my own app to experiment with some of the different CA rules. I created this in C with [SDL](https://www.libsdl.org/), a low level game development library.
-Later, I ported this to [Emscripten](https://kripken.github.io/emscripten-site/) which has built-in support for SDL, to compile this to run in a brower. A demo of this is [available below](#demo).
+Later, I ported this to [Emscripten](https://kripken.github.io/emscripten-site/) which has built-in support for SDL, to compile this to run in a browser. A demo of this is [available below](#demo).
 
 The core algorithm is fairly simple. For each cell in the grid we loop over the immediate neighbourhood and count the cells alive:
 
@@ -70,6 +70,11 @@ alive to dead to customise the look:
     }
 }
 ```
+
+This implementation is the naive or brute-force method though. This could be optimised by avoiding the repeated calculations of the neighbourhood indices and using a pre-calculated look up table, you would then be able to use a single for-loop rather than the four nested loops.
+
+Additionally, the naive algorithm wastes time looking at areas that are not changing. This could be improved by keeping track of all the cell transitions
+and looking only at the cells adjacent to the transitions. Even so, the naive approach has no problem running at 60FPS in a modern browser.
 
 The full source is available at [github](https://github.com/s-knibbs/CaLife).
 

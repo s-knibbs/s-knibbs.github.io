@@ -5,6 +5,7 @@ image:
   url: /image/jekyll-logo-speed.svg
   name: High speed jekyll
   caption: Image adapted from [Jekyll branding](https://github.com/jekyll/brand#jekylls-logo).
+  centered: true
 ---
 Being a static site generator, Jekyll will give you pretty good page load performance out of the box. But that doesn't mean that it can't be optimised. When I initially tested my site with [PageSpeed Insights](https://developers.google.com/speed/pagespeed/), the mobile score was **69/100**. We can do better than that!
 

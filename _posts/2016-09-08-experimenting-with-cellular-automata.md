@@ -5,6 +5,7 @@ image:
   url: /static/calife/CaLife-screen.gif
   alt: Calife screenshot
   caption: Diamoeba rule using S5678/B35678
+  centered: true
 categories: Experiments
 tags: SDL Emscripten C Cellular-Automata
 ---

@@ -14,7 +14,7 @@ stylesheets:
 
   <article class="post-content">
   {% if page.image %}
-  <figure>
+  <figure {% if page.image.centered %} style="text-align: center" {% endif %}>
     <img class='main-image' src='{{ page.image.url }}' alt='{{ page.image.name }}' title='{{ page.image.name }}' />
     {% if page.image.caption %}<figcaption>{{ page.image.caption | markdownify }}</figcaption>{% endif %}
   </figure>

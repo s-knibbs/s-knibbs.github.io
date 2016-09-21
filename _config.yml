@@ -58,6 +58,7 @@ defaults:
         - "/css/highlight.css"
       scripts:
         - "/js/header-link.js"
+        - "/js/embed-svg-loader.js"
   -
     scope:
       path: ""

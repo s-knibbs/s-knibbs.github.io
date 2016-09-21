@@ -14,8 +14,18 @@ stylesheets:
 
   <article class="post-content">
   {% if page.image %}
+  {% assign tag_type = 'img' %}
+  {% if page.image.type == 'SVG' %}
+  {% assign tag_type = 'iframe' %}
+  {% endif %}
   <figure {% if page.image.centered %} style="text-align: center" {% endif %}>
-    <img class='main-image' src='{{ page.image.url }}' alt='{{ page.image.name }}' title='{{ page.image.name }}' />
+    <{{ tag_type }} class='main-image'
+      src='{{ page.image.url }}'
+      alt='{{ page.image.name }}'
+      title='{{ page.image.name }}'
+      {% if page.image.type == 'SVG' %}type='image/svg+xml'{% endif %}
+      {% if page.image.width %} width={{ page.image.width }} {% endif %}
+      {% if page.image.height %} height={{ page.image.height }} {% endif %}></{{ tag_type }}>
     {% if page.image.caption %}<figcaption>{{ page.image.caption | markdownify }}</figcaption>{% endif %}
   </figure>
   {% endif %}

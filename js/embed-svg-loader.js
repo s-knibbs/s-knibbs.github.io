@@ -13,8 +13,13 @@ $(document).ready(function() {
     if (iframe && !iframe.loaded)
     {
         $.get(iframe.src, function (data) {
-            var encoded = window.btoa(data);
-            iframe.src = "data:image/svg+xml;base64," + encoded;
+            var svg = $(data);
+            svg.attr({
+                'width': iframe.width,
+                'height': iframe.height,
+            });
+            svg.insertAfter($(iframe));
+            $(iframe).remove();
         });
     }
 });

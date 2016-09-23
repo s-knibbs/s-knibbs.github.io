@@ -1,25 +1,21 @@
 'use strict';
 
 /* Workaround for the X-Frame-Options
- * security measure which will otherwise block
- * externally loaded SVGs
+ * which will block SVGs from loading in embed/iframe/object
+ * elements.
  */
-$('iframe.main-image').on("load", function () {
-    this.loaded = true;
-});
-
 $(document).ready(function() {
-    var iframe = $('iframe.main-image').get(0);
-    if (iframe && !iframe.loaded)
+    var svg_placeholder = $('div.main-image');
+    if (svg_placeholder)
     {
-        $.get(iframe.src, function (data) {
+        $.get(svg_placeholder.attr('data-svg-src'), function (data) {
             var svg = $(data);
             svg.attr({
-                'width': iframe.width,
-                'height': iframe.height,
+                'width': svg_placeholder.attr('data-width'),
+                'height': svg_placeholder.attr('data-height')
             });
-            svg.insertAfter($(iframe));
-            $(iframe).remove();
+            svg.insertAfter(svg_placeholder);
+            svg_placeholder.remove();
         });
     }
 });

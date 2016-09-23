@@ -8,7 +8,10 @@ stylesheets:
 
   <header class="post-header">
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <p class="meta">
+      {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+      {% include dev-links.html %}
+    </p>
     {% include social-media.html %}
   </header>
 
@@ -16,21 +19,30 @@ stylesheets:
   {% if page.image %}
   {% assign tag_type = 'img' %}
   {% if page.image.type == 'SVG' %}
-  {% assign tag_type = 'iframe' %}
+  {% assign tag_type = 'div' %}
   {% endif %}
   <figure {% if page.image.centered %} style="text-align: center" {% endif %}>
     <{{ tag_type }} class='main-image'
-      src='{{ page.image.url }}'
-      alt='{{ page.image.name }}'
+      {% if tag_type == 'div' %}data-svg-{% endif %}src='{{ page.image.url }}'
+      {% if tag_type == 'img' %}alt='{{ page.image.name }}'{% endif %}
       title='{{ page.image.name }}'
-      {% if page.image.type == 'SVG' %}type='image/svg+xml'{% endif %}
-      {% if page.image.width %} width={{ page.image.width }} {% endif %}
-      {% if page.image.height %} height={{ page.image.height }} {% endif %}></{{ tag_type }}>
+      {% if page.image.width %} data-width={{ page.image.width }} {% endif %}
+      {% if page.image.height %} data-height={{ page.image.height }} {% endif %}></{{ tag_type }}>
     {% if page.image.caption %}<figcaption>{{ page.image.caption | markdownify }}</figcaption>{% endif %}
   </figure>
   {% endif %}
   {{ content }}
   </article>
+
+  {% if page.tags %}
+  <div class="post-tags">
+    <ul>
+      {% for tag in page.tags %}
+        <li><span class="fa fa-tag"></span> <a href="/tags/#{{ tag | downcase }}">{{ tag | downcase }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
 
   {% if page.previous %}
   <span class="prev">

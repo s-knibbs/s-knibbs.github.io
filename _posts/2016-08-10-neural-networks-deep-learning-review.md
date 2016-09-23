@@ -2,7 +2,7 @@
 layout: post
 title: "Review: Neural Networks and Deep Learning"
 categories: "Reviews"
-tags: neural-networks python GPU
+tags: neural-networks Python GPU
 ---
 
 Machine learning is being used more and more nowadays, from machines to automatically process bank cheques to [Google's reCAPTCHA](https://www.google.com/recaptcha/). So I recently spent some time learning about neural networks, and their application to machine learning and image recognition. I would like to recommend the book I found on this subject,

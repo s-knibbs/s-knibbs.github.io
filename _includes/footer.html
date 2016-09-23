@@ -85,6 +85,10 @@
             <span class="username">LinkedIn</span>
           </a>
         </li>{% endif %}
+        {% if site.twitter_username %}
+        <li>
+          {% include icon-twitter.html username=site.twitter_username %}
+        </li>{% endif %}
       </ul>
     </div>
 

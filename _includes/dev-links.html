@@ -1,0 +1,4 @@
+{% if site.environment == "development" %}
+  <a id='set-editable' href='#editable'>Editable</a> • <a id='set-auto-reload' href='#auto-reload'>Auto Refresh</a>
+  • <a href='https://github.com/{{ site.github_username }}/{{ site.reponame }}/commits/master/{{ page.path }}'>Revision History</a>
+{% endif %}

@@ -23,7 +23,7 @@ function hashString(str) {
     var md5 = crypto.createHash('md5');
     var hex_digest = md5.update(str).digest('hex');
     // Convert to integer
-    return parseInt(hex_digest, 16) % 49979687;
+    return parseInt(hex_digest.slice(0, 8), 16);
 }
 
 /**
@@ -119,11 +119,13 @@ else
                 {
                     description = article;
                 }
+                file = file.replace(new RegExp('^' + options['index-dir']), '');
+                file = file.replace(/index\.html$/, '');
                 var doc = {
                     title: meta_title.content,
                     body: article.textContent,
                     description: truncateWords(description.textContent, 50),
-                    url: file.replace(new RegExp('^' + options['index-dir']), ''),
+                    url: file,
                     id: hashString(file)
                 };
                 index.addDoc(doc);

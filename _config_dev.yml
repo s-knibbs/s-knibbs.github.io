@@ -5,6 +5,7 @@ future: true
 exclude:
   - "package.json"
   - "data/index.json" # Exclude search index to prevent infinite rebuild loop
+  - "data/tag-index.json"
   - "*.min.js"  # Exclude minified javascript
   - "*.min.css" #  Exclude minified CSS
   - "*.sh"

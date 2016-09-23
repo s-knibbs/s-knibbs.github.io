@@ -7,10 +7,11 @@ author: Simon J Knibbs
 email: simon.knibbs@gmail.com
 description: "Software engineer with 5 years industry experience. The languages I work with most are Python & HTML/CSS/JS and C/C++ for low-level work."
 baseurl: ""
+reponame: s-knibbs.github.io
 url: "https://s-knibbs.github.io"
 
 # Social media
-
+twitter_username: sjknibbs
 github_username: s-knibbs
 linkedin_userid: simon-knibbs-41a7462b
 

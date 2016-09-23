@@ -1,4 +1,5 @@
 require 'uglifier'
+require 'digest'
 
 module Jekyll
     class BuildExtras < Generator
@@ -7,11 +8,29 @@ module Jekyll
         def generate(site)
             # Minify JS
             _compress_files(site, '.js', Uglifier.new)
+            _create_tag_index(site)
 
             # Completely regenerate the search index in the background:
             pid = spawn("npm run build-index && cp -r data %s" % site.dest,
                         :out => "/dev/null", :err =>  "%s/index-build.log" % site.dest)
             Process.detach(pid)
+        end
+
+        def _create_tag_index(site)
+            tag_map = site.post_attr_hash('tags')
+            tag_map = tag_map.map do |tag, posts|
+                [tag.downcase, posts.map {|p| _hash_str(p.url)}]
+            end
+            tag_map = tag_map.to_h
+            File.open('data/tag-index.json', 'w') do |f|
+                f.write(tag_map.to_json)
+            end
+        end
+
+        def _hash_str(str)
+            md5 = Digest::MD5.new
+            md5.update str
+            Integer(md5.hexdigest[0, 8], 16)
         end
 
         def _compress_files(site, extname, compressor)

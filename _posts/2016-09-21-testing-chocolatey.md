@@ -79,11 +79,13 @@ You can install a list of packages using `choco install` by specifying `packages
 </packages>
 ```
 
-Unfortunately, there isn't currently a way to [generate this XML automatically](https://github.com/chocolatey/choco/issues/357) from the list of installed packages, so I created a [small Python script](https://gist.github.com/s-knibbs/e3255f3d862da87827d7ae651b9cafb9) to do this by calling `choco list --localonly`. The script requires [Jinja](http://jinja.pocoo.org/) for the XML template which can be installed with:
+There isn't currently a way to [generate this XML automatically](https://github.com/chocolatey/choco/issues/357) from the list of installed packages though. So I created a [small Python script](https://gist.github.com/s-knibbs/e3255f3d862da87827d7ae651b9cafb9) to do this by calling `choco list --localonly`. The script requires [Jinja](http://jinja.pocoo.org/) for the XML template which can be installed with:
 
 ```
 pip install jinja
 ```
+
+### Conclusions
 
 From my initial experience, Chocolatey seems to work pretty well. I was able to convert many of the manually installed applications on my machine to 'Chocolatey' installs by re-installing these with `choco install`.
 

@@ -10,7 +10,7 @@ $(document).ready(function () {
             url: '/mtime.txt',
             method: 'GET'
         }).done(function (data) {
-            var mtime = new Date(data.trim());
+            var mtime = new Date(data.replace(/\+\d+\n?$/, '').trim());
             if (last_mtime != null && mtime > last_mtime)
             {
                 window.location.reload();
@@ -21,6 +21,10 @@ $(document).ready(function () {
             }
         });
     }
+
+    $('#set-auto-reload').click(function () {
+        window.setInterval(checkMtime, 500);
+    });
 
     if (window.location.hash == '#auto-reload')
     {

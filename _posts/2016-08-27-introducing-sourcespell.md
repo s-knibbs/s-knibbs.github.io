@@ -2,7 +2,7 @@
 layout: post
 title: Introducing SourceSpell
 categories: "Site Development"
-tags: python open-source pypi pygments pyenchant
+tags: Python open-source pypi pygments pyenchant
 ---
 
 I was looking at tools that could spell check comments and string literals in my work. However, none of the existing tools (e.g [SCSC](http://www.softario.com/scsc.html)) are particularly well supported or only support a limited range of languages. So I decided to create my own tool.

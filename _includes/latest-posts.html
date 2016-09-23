@@ -1,0 +1,15 @@
+<div class="latest-posts">
+    <div class="wrap">
+        <div class="post">
+          <h1>Latest Posts</h1>
+          <table>
+          {% for post in site.posts limit: 6 %}
+          <tr>
+              <td><small>{{ post.date | date: "%b %-d, %Y" }}</small></td>
+              <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+          </tr>
+          {% endfor %}
+          </table>
+        </div>
+    </div>
+</div>

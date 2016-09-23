@@ -16,6 +16,9 @@ layout: compress
       </div>
     </div>
 
+    {% if page.path == "index.html" %}
+    {% include latest-posts.html %}
+    {% endif %}
     {% include footer.html %}
 
     <script src="{{ site.jquery_url }}"></script>

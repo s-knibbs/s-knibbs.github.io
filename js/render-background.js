@@ -105,7 +105,7 @@ function drawGrid() {
     var step = 30;
 
     var grid_width = parseInt(width / step);
-    var grid_height = parseInt(height / step);
+    var grid_height = Math.ceil(height / step);
     var plane = conwayGOL(grid_width, grid_height, 4);
 
     // Fill styles for the different cell states

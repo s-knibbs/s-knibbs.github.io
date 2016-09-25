@@ -18,6 +18,7 @@ include:
   - "elasticlunr.min.js"
   - "mustache.min.js"
   - "index.min.js"
+  - "bowser.min.js"
 
 # Disable HTML minification
 compress_html:

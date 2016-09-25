@@ -8,8 +8,7 @@ image:
   url: https://raw.githubusercontent.com/chocolatey/chocolatey.org/master/chocolatey/Website/Content/Images/logo_square.svg
   centered: true
   caption: Logo from [chocolatey.org](https://github.com/chocolatey/chocolatey.org)
-  height: 300
-  width: 600
+  width: 66%
   type: SVG
 ---
 For those who don't already know, [Chocolatey](https://chocolatey.org/) is a package manager for Windows, similar to the [Advanced Packaging Tool](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool) (APT) in Debian Linux. Chocolatey is designed for complete applications rather than developer libraries. For that there is a separate tool called [NuGet](https://www.nuget.org/).

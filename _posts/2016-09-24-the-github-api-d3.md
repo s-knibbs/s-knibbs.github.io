@@ -3,6 +3,10 @@ layout: post
 title: Visualising GitHub repo data with d3.js
 tags: d3 javascript svg octokit github
 mathjax: true
+scripts:
+  - //d3js.org/d3.v4.min.js
+  - /js/bowser.min.js
+  - /js/language-bubbles.js
 ---
 I have been spending some time learning [d3.js](https://d3js.org) (Data-Driven Documents), a data visualisation library for javascript. I used d3 to create a [bubble chart](#languages-used) of all programming languages I have used throughout my public GitHub repositories, using data from the GitHub API.
 
@@ -77,7 +81,24 @@ The full source is available in this [site's repository]({{ site.github.reposito
 
 ### Languages Used in my Public Repos {#languages-used}
 
-[View Standalone](/static/language-bubbles.html)
+[View Standalone](/static/language-bubbles.html).
 
-<iframe src='/static/language-bubbles.html' style='width: 100%; height: 850px; overflow: hidden' scrolling='no' onload="this.contentDocument.body.scrollHeight + 'px';">
-</iframe>
+**Note:** Mouse hovering doesn't currently work correctly in IE due to [this bug](https://github.com/d3/d3/issues/2454).
+
+<style type="text/css">
+    svg text {
+        font-family: sans-serif;
+        text-shadow: 0 0 3px rgba(255,255,255,0.8);
+        font-weight: bold;
+        font-size: 80%;
+    }
+    svg circle {
+        opacity: 0.8;
+    }
+    .hide {
+        visibility: hidden;
+    }
+    .hide.mouseover {
+        visibility: visible;
+    }
+</style>

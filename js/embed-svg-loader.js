@@ -10,7 +10,7 @@ $(document).ready(function() {
     {
         $.get(svg_placeholder.attr('data-svg-src'), function (data) {
             var svg = $(data);
-            svg.attr({
+            svg.css({
                 'width': svg_placeholder.attr('data-width'),
                 'height': svg_placeholder.attr('data-height')
             });

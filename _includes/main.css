@@ -170,7 +170,8 @@ input[type="submit"] {
   margin-left: 5px;
   font-size: 120%;
   color: rgba(176,176,176,0.6);
-  height: 20px; /* Fix height for IE11 */
+  line-height: 1;
+  padding-left: 1px;
 }
 
 .search-submit > svg {
@@ -361,6 +362,10 @@ input[type="submit"] {
 }
 
 @media screen and (max-width: 600px) {
+  .MathJax_Display {
+    font-size: 70%;
+    text-align: left !important;
+  }
 
   .wrap { padding: 0 12px; }
 

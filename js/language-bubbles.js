@@ -1,9 +1,10 @@
 'use strict';
 (function () {
     var diameter = 900;
-    var svg = d3.select('body').append('svg')
+    var svg = d3.select('#main-content').append('svg')
         .attr("width", diameter)
-        .attr("height", diameter);
+        .attr("viewBox", "0 0 " + diameter + " " + diameter)
+        .style("max-width", "100%");
 
     d3.selection.prototype.moveToFront = function()
     {
@@ -69,7 +70,9 @@
             // Hide text for small bubbles to avoid overlaps.
             .classed('hide', function (d) { return (this.getBBox().width > (2.5 * d.r)); });
 
-        nodes.on('mouseover', function () {
+        var mouseenter = (bowser.chrome) ? "mouseenter" : "mouseover";
+        var mouseleave = (bowser.chrome) ? "mouseleave" : "mouseout";
+        nodes.on(mouseenter, function () {
             var sel = d3.select(this);
             sel.moveToFront();
             var text_bbox = sel.select('text').classed('mouseover', true).node().getBBox();
@@ -80,10 +83,10 @@
                 .attr('y', text_bbox.y - padding)
                 .attr('width', text_bbox.width + 2 * padding)
                 .attr('height', text_bbox.height + 2 * padding);
-        })
-            .on('mouseout', function () {
-                d3.select(this).select('text').classed('mouseover', false);
-                d3.select(this).select('rect').remove();
-            });
+        });
+        nodes.on(mouseleave, function () {
+            d3.select(this).select('text').classed('mouseover', false);
+            d3.select(this).select('rect').remove();
+        });
     });
 })();

@@ -1,5 +1,6 @@
 require 'uglifier'
 require 'digest'
+require 'octokit'
 
 module Jekyll
     class BuildExtras < Generator
@@ -9,11 +10,31 @@ module Jekyll
             # Minify JS
             _compress_files(site, '.js', Uglifier.new)
             _create_tag_index(site)
+            # Only optionally build language repo totals
+            # to avoid slowing down the build
+            if ENV['BUILD_LANGUAGE_TOTALS'] == '1'
+                Jekyll.logger.debug "Building language totals..."
+                _get_repo_languages(site)
+            end
 
             # Completely regenerate the search index in the background:
             pid = spawn("npm run build-index && cp -r data %s" % site.dest,
                         :out => "/dev/null", :err =>  "%s/index-build.log" % site.dest)
             Process.detach(pid)
+        end
+
+        def _get_repo_languages(site)
+            client = Octokit::Client.new({:auto_paginate => true, :access_token => ENV['JEKYLL_GITHUB_TOKEN']})
+            # TODO: Filter out any repos which are forks here.
+            # TODO: Store last commit-id for each repo to avoid unnecessary API requests.
+            language_totals = Hash.new
+            client.list_repos.each do |repo|
+                languages = client.languages(repo['full_name'])
+                language_totals.merge!(languages.to_h) {|k, new, old| new + old}
+            end
+            File.open('data/language-totals.json', 'w') do |f|
+                f.write(language_totals.to_json)
+            end
         end
 
         def _create_tag_index(site)

@@ -45,6 +45,7 @@ sass:
 gems:
   - jekyll-seo-tag
   - build-extras
+  - jekyll-github-metadata
 
 # Default variables for the YAML Front Matter
 defaults:

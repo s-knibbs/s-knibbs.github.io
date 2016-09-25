@@ -6,6 +6,7 @@ exclude:
   - "package.json"
   - "data/index.json" # Exclude search index to prevent infinite rebuild loop
   - "data/tag-index.json"
+  - "data/language-totals.json"
   - "*.min.js"  # Exclude minified javascript
   - "*.min.css" #  Exclude minified CSS
   - "*.sh"

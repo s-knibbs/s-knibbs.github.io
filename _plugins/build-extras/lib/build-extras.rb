@@ -18,8 +18,10 @@ module Jekyll
             end
 
             # Completely regenerate the search index in the background:
-            pid = spawn("npm run build-index && cp -r data %s" % site.dest,
-                        :out => "/dev/null", :err =>  "%s/index-build.log" % site.dest)
+            pid = spawn(
+                "npm run build-cache-config && npm run build-index && cp -r data %s" % site.dest,
+                :out => "/dev/null", :err => "%s/../index-build.log" % site.dest
+            )
             Process.detach(pid)
         end
 

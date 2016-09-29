@@ -4,14 +4,16 @@ future: true
 
 exclude:
   - "package.json"
-  - "data/index.json" # Exclude search index to prevent infinite rebuild loop
-  - "data/tag-index.json"
-  - "data/language-totals.json"
   - "*.min.js"  # Exclude minified javascript
-  - "*.min.css" #  Exclude minified CSS
+  - "*.min.css" # Exclude minified CSS
   - "*.sh"
   - "Gemfile"
   - "Gemfile.lock"
+  - "index-build.log"
+  - "data/tag-index.json" # Exclude all build generate data to prevent infinite rebuild loop.
+  - "data/cache-config.min.js"
+  - "data/index.json"
+  - "data/language-totals.json"
 
 # Always include third-party minified libraries
 include:

@@ -8,7 +8,8 @@
         "jsdom": ">=9.4.2"
     },
     "scripts": {
-        "build-index": "_scripts/build-index _site -i */404.html */search/* */sitemap/* */blog/index.html -o data/index.json"
+        "build-index": "_scripts/build-index _site -i */404.html */search/* */sitemap/* */blog/index.html -o data/index.json",
+        "build-cache-config": "_scripts/build-cache-config _site -o data/cache-config.min.js"
     }
 
 }

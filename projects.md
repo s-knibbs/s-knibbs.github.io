@@ -6,8 +6,6 @@ mainnav: true
 order: 1
 sitemap:
   priority: 0.7
-scripts:
-  - "/js/header-link.js"
 ---
 
 ## Commercial Projects

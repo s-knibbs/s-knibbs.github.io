@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const fs = require('fs');
+const crypto = require('crypto');
+const optionParser = require('command-line-args');
+const path = require('path');
+const recursive = require('recursive-readdir');
+
+const VERSION = '0.1';
+const DESCRIPTION = 'Script to build the cache config for the site\'s service worker';
+const SCRIPT_NAME = path.basename(process.argv[1]);
+
+const optionParams = [
+    {name: 'site-dir', alias: 'd', type: String, defaultOption: true},
+    {name: 'output', alias: 'o', type: String, defaultValue: './cache-config.js'},
+    {name: 'help', alias: 'h', type: Boolean}
+];
+
+const options = optionParser(optionParams);
+
+if (options.help)
+{
+    console.log(SCRIPT_NAME + ' - ' + DESCRIPTION + '\n');
+    console.log(
+        'Usage: ' + SCRIPT_NAME + ' SITE-DIR [--output,-o OUT-FILE]'
+    );
+    process.exit();
+}
+
+// Only include files under '/css/, /js/, /static/ or /image/'
+function includeStatic(file, stats)
+{
+    console.log(file);
+    return (!file.match(/\/css|\/js|\/static|\/image/));
+}
+
+recursive(options['site-dir'], [includeStatic], function(err, files) {
+    if (err)
+    {
+        console.log(err);
+        return;
+    }
+    var cache_config = {};
+
+    for (var file of files)
+    {
+        var md5 = crypto.createHash('md5');
+        var file_content = fs.readFileSync(file);
+        var hexdigest = md5.update(file_content).digest('hex');
+        file = file.replace(new RegExp('^' + options['site-dir'] + '/?'), '');
+        file = file.replace(/index\.html$/, '');
+        cache_config[file] = hexdigest;
+    }
+
+    var out = 'var CACHE_CONFIG = ';
+    out += JSON.stringify(cache_config);
+    out += ';';
+
+    fs.writeFileSync(options.output, out, 'utf-8');
+    process.exit();
+});

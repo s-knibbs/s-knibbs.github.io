@@ -38,6 +38,8 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
   - "*.sh"
+  - "index-build.log"
+
 sass:
   style: compressed
 
@@ -59,7 +61,6 @@ defaults:
         - "/css/post.css"
         - "/css/highlight.css"
       scripts:
-        - "/js/header-link.js"
         - "/js/embed-svg-loader.js"
   -
     scope:
@@ -78,3 +79,5 @@ defaults:
 global_scripts:
     - "/js/highlight-search.js"
     - "/js/shortcuts.js"
+    - "/js/header-link.js"
+    - "/js/sw-registration.js"

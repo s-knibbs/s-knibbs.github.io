@@ -32,7 +32,6 @@ if (options.help)
 // Only include files under '/css/, /js/, /static/ or /image/'
 function includeStatic(file, stats)
 {
-    console.log(file);
     return (!file.match(/\/css|\/js|\/static|\/image/));
 }
 

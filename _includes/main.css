@@ -70,7 +70,7 @@ dd { margin-left: 15px; }
 
 strong { font-weight: bold; }
 
-input[type="submit"] {
+input[type="submit"], article button {
   border: none;
   background-color: #293263;
   padding: 6px;
